@@ -121,25 +121,68 @@ img {
     backdrop-filter: blur(20px);
 }
 
+/* --- Logo dans la Navbar --- */
+.navbar .logo,
 .logo {
-    display: inline-flex;
+    display: inline-flex !important;
     align-items: center;
     gap: 10px;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 800;
-    letter-spacing: 0;
-    color: var(--primary-dark);
+    text-decoration: none;
+    user-select: none;
+    /* Annulation des marges par défaut */
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-.logo-mark {
-    width: 34px;
-    height: 34px;
-    display: inline-grid;
-    place-items: center;
-    border-radius: 10px;
-    color: var(--white);
-    background: var(--primary);
-    box-shadow: 0 12px 26px rgba(107, 70, 193, 0.16);
+/* --- Pastille / Conteneur Image Rond --- */
+.logo .logo-mark {
+    width: 36px;  /* Format compact adapté à une Navbar (~36-38px) */
+    height: 36px;
+    border-radius: 50%; /* Cercle parfait */
+    overflow: hidden;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: var(--background-subtle, #f4f4f6);
+    border: 1.5px solid var(--line, #e2e8f0);
+    
+    /* Transition fluide pour le survol */
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                border-color 0.2s ease, 
+                box-shadow 0.2s ease;
+    
+    flex-shrink: 0;
+}
+
+/* --- Photo de profil --- */
+.logo .logo-mark img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recadrage parfait sans déformation */
+    display: block;
+}
+
+/* --- Texte "hub.objct" --- */
+.logo span {
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink, #0f172a);
+    margin: 0 !important; /* Neutralise les styles globaux */
+    transition: color 0.2s ease;
+}
+
+/* --- Interactivité au survol (Hover State Pro) --- */
+.logo:hover .logo-mark {
+    transform: scale(1.08); /* Effet zoom très léger et moderne */
+    border-color: var(--primary, #0066ff);
+    box-shadow: 0 0 12px rgba(0, 102, 255, 0.2);
+}
+
+.logo:hover span {
+    color: var(--primary, #0066ff);
 }
 
 .nav-panel,
@@ -973,64 +1016,199 @@ blockquote {
     font-weight: 800;
 }
 
+/* --- Section Footer --- */
 .footer {
     padding: 60px 0 26px;
-    color: var(--muted);
+    color: var(--muted, #666666);
     background: #ffffff;
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--line, #e5e5e5);
 }
 
+/* --- Grille Principale --- */
 .footer-grid {
     display: grid;
     grid-template-columns: 1.5fr repeat(3, 1fr);
-    gap: 36px;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Logo & Marque */
+.footer .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    color: var(--ink, #111111);
+    text-decoration: none;
 }
 
 .footer p {
     max-width: 360px;
     margin-top: 16px;
+    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
+/* Titres de colonnes */
 .footer h3 {
-    margin-bottom: 14px;
-    color: var(--ink);
-    font-size: 1rem;
+    margin-bottom: 16px;
+    color: var(--ink, #111111);
+    font-size: 1.05rem;
+    font-weight: 600;
 }
 
-.footer a,
-.footer span {
+/* Liens & Éléments textuels */
+.footer a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer a:hover {
+    color: var(--primary, #0066ff);
+}
+
+.footer div > a,
+.footer div > span {
     display: block;
-    margin: 8px 0;
+    margin: 10px 0;
+    font-size: 0.95rem;
 }
 
+/* 1. Conteneur des icônes */
 .footer-socials {
-    margin-top: 18px;
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
 }
 
+/* 2. Boutons d'icônes (Annule le display: block des liens du footer) */
+.footer .footer-socials a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px;
+    height: 40px;
+    margin: 0 !important; /* Annule le margin: 8px 0 */
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--ink, #111111);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/* 3. Centrage strict du glyphe FontAwesome à l'intérieur du bouton */
+.footer-socials a i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    line-height: 1; /* Supprime le décalage de hauteur de ligne typographique */
+}
+
+/* Effet au survol */
+.footer-socials a:hover {
+    background: var(--primary, #0066ff);
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 576px) {
+    .footer-socials {
+        justify-content: center;
+    }
+}
+
+/* --- Bas de Footer --- */
 .footer-bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 18px;
-    margin-top: 44px;
-    padding-top: 22px;
-    border-top: 1px solid var(--line);
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line, #e5e5e5);
+    font-size: 0.9rem;
 }
 
+.footer-bottom span {
+    display: inline; /* Corrige le span qui passait en display:block */
+    margin: 0;
+}
+
+/* --- Style du Bouton Back to Top --- */
 .back-to-top {
-    width: 42px;
-    height: 42px;
-    display: grid;
-    place-items: center;
-    border-radius: 999px;
-    color: var(--white);
-    background: var(--primary);
+    /* Dimensions & Forme */
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    
+    /* Centrage rigoureux (Flexbox) */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+    /* Couleurs & Fond */
+    background: var(--primary, #0066ff);
+    color: var(--white, #ffffff) !important;
+    text-decoration: none;
+    
+    /* Ombre subtile & Micro-interactions */
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.25);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                background-color 0.2s ease, 
+                box-shadow 0.2s ease;
+    
+    /* Annulation des marges globales héritées */
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-shrink: 0; /* Évite la déformation du cercle */
 }
 
+/* Centrage parfait du symbole de l'icône FontAwesome */
+.back-to-top i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    line-height: 1; /* Supprime le décalage typographique par défaut */
+}
+
+/* --- Effets au Survol (Hover) & Clic (Active) --- */
+.back-to-top:hover {
+    transform: translateY(-4px); /* Élévation douce vers le haut */
+    box-shadow: 0 8px 20px rgba(0, 102, 255, 0.38);
+    background: var(--primary-dark, #0052cc);
+}
+
+.back-to-top:active {
+    transform: translateY(-1px) scale(0.96); /* Effet d'enfoncement au clic */
+}
+
+/* Optionnel : Animation subtile de la flèche lors du survol */
+.back-to-top:hover i {
+    animation: bounceUp 0.6s infinite alternate ease-in-out;
+}
+
+@keyframes bounceUp {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-3px); }
+}
+
+/* --- Ajustement Mobile --- */
+@media (max-width: 576px) {
+    .footer-bottom {
+        flex-direction: column-reverse; /* Place le bouton au-dessus de la mention de copyright */
+        gap: 16px;
+        align-items: center;
+    }
+}
+/* --- Animations Reveal --- */
 .reveal {
     opacity: 0;
     transform: translateY(26px);
-    transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+    transition: opacity 700ms var(--ease, ease), transform 700ms var(--ease, ease);
 }
 
 .reveal.active {
@@ -1038,6 +1216,35 @@ blockquote {
     transform: translateY(0);
 }
 
+/* --- Responsive (Tablettes & Mobiles) --- */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-socials {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column-reverse;
+        gap: 16px;
+        text-align: center;
+    }
+}
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
