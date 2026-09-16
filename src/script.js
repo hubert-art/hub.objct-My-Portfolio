@@ -120,7 +120,7 @@ const translations = {
       "Thanks. Your message is ready to send from your email app.",
     "form.error": "Please complete every field with a valid email address.",
     "footer.description":
-      "A modern portfolio for Hubert Lubula, software engineering student and full stack product builder.",
+      "Hubert Lubula, software engineering student and full stack product builder.",
     "footer.quick": "Quick Links",
     "footer.services": "Services",
     "footer.contact": "Contact",
@@ -259,7 +259,7 @@ const translations = {
     "form.error":
       "Veuillez remplir tous les champs avec une adresse email valide.",
     "footer.description":
-      "Portfolio moderne de Hubert Lubula, etudiant en genie logiciel et createur de produits full stack.",
+      "Hubert Lubula, etudiant en genie logiciel et createur de produits full stack.",
     "footer.quick": "Liens rapides",
     "footer.services": "Services",
     "footer.contact": "Contact",
@@ -308,13 +308,13 @@ if (shell)
 
 if (footerSlot)
   footerSlot.innerHTML = `
-  <footer class="footer"><div class="container footer-grid"><div><a class="logo" href="index.html"><span class="logo-mark"><img src="./src/assets/hubProfil.png" alt="Hubert Lubula Profile"></span><span>Hubert Lubula</span></a><p data-i18n="footer.description">A modern portfolio for Hubert Lubula, software engineering student and full stack product builder.</p><div class="footer-socials"><a href="https://github.com/hubert-art" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a><a href="https://www.linkedin.com/in/hubert-lubula-7737353b4/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="https://www.instagram.com/were_hub/" target="_blank" rel="noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://www.tiktok.com/@hub.hb?lang=fr" target="_blank" rel="noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div></div><div><h3 data-i18n="footer.quick">Quick Links</h3><a href="about.html" data-i18n="nav.about">About</a><a href="expertise.html" data-i18n="nav.expertise">Expertise</a><a href="experience.html" data-i18n="nav.experience">Experience</a><a href="projects.html" data-i18n="nav.projects">Projects</a><a href="creative.html" data-i18n="creative.eyebrow">Creative Work</a></div><div><h3 data-i18n="footer.contact">Contact</h3><a href="mailto:lubulahubert@mail.com">lubulahubert@mail.com</a><a href="tel:+254141504419">+254 141504419 / +254 746786865</a><span>Nairobi, Kenya</span></div></div><div class="container footer-bottom"><span>© <span data-year></span> Hubert Lubula. <span data-i18n="footer.rights">All rights reserved.</span></span><a class="back-to-top" href="#top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a></div></footer>`;
+  <footer class="footer"><div class="container footer-grid"><div><a class="logo" href="index.html"><span class="logo-mark"><img src="./src/assets/hubProfil.png" alt="Hubert Lubula Profile"></span><span>Hubert Lubula</span></a><p data-i18n="footer.description">Hubert Lubula, software engineering student and full stack product builder.</p><div class="footer-socials"><a href="https://github.com/hubert-art" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a><a href="https://www.linkedin.com/in/hubert-lubula-7737353b4/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="https://www.instagram.com/were_hub/" target="_blank" rel="noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://www.tiktok.com/@hub.hb?lang=fr" target="_blank" rel="noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div></div><div><h3 data-i18n="footer.quick">Quick Links</h3><a href="about.html" data-i18n="nav.about">About</a><a href="expertise.html" data-i18n="nav.expertise">Expertise</a><a href="experience.html" data-i18n="nav.experience">Experience</a><a href="projects.html" data-i18n="nav.projects">Projects</a><a href="creative.html" data-i18n="creative.eyebrow">Creative Work</a></div><div><h3 data-i18n="footer.contact">Contact</h3><a href="mailto:lubulahubert@mail.com">lubulahubert@mail.com</a><a href="tel:+254141504419">+254 141504419 / +254 746786865</a><span>Nairobi, Kenya</span></div></div><div class="container footer-bottom"><span>© <span data-year></span> Hubert Lubula. <span data-i18n="footer.rights">All rights reserved.</span></span><a class="back-to-top" href="#top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a></div></footer>`;
 
 const creativeItems = [
   {
     title: "BuyIn",
     year: "2025",
-    status: "finished",
+    status: "inProgress",
     images: [
       {
         src: "./src/assets/buyin1.png",
