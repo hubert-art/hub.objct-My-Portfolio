@@ -1,454 +1,148 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hubert Lubula is a Software Engineering student at USIU-Africa building elegant full stack digital products.">
-    <meta name="theme-color" content="#6d28d9">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Hubert Lubula is a Software Engineering student at USIU-Africa building elegant full stack digital products."
+    />
     <title>Hubert Lubula | Software Engineer Portfolio</title>
-    <link rel="icon" type="image/png" href="./src/assets/hubProfil.png">
-    <link rel="stylesheet" href="./src/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/7b9d88401c.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div class="site-bg" aria-hidden="true">
-        <span class="mesh mesh-one"></span>
-        <span class="mesh mesh-two"></span>
-        <span class="grid-glow"></span>
-    </div>
-
-    <header class="site-header" id="top">
-        <nav class="navbar" aria-label="Primary navigation">
-            <a class="logo" href="#home">
-    <div class="logo-mark">
-        <img src="./src/assets/hubProfil.png" alt="Hubert Lubula Profile" />
-    </div>
-    <span>Hubert Lubula</span>
-</a>
-
-            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open navigation">
-                <span></span>
-                <span></span>
-            </button>
-
-            <div class="nav-panel" id="navMenu">
-                <div class="nav-links">
-                    <a href="#home" data-i18n="nav.home">Home</a>
-                    <a href="#about" data-i18n="nav.about">About</a>
-                    <a href="#skills" data-i18n="nav.skills">Skills</a>
-                    <a href="#projects" data-i18n="nav.projects">Projects</a>
-                    <a href="#services" data-i18n="nav.services">Services</a>
-                    <a href="#contact" data-i18n="nav.contact">Contact</a>
-                </div>
-
-                <button class="language-switch" type="button" data-language-toggle aria-label="Switch language">
-                    <span data-language-flag>🇫🇷</span>
-                    <span data-language-label>FR</span>
-                </button>
+    <link rel="icon" href="./src/assets/hubProfil.png" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/7b9d88401c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="site-bg" aria-hidden="true"></div>
+    <div data-site-shell></div>
+    <main class="page-enter" data-page="home">
+      <section class="hero section">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow" data-i18n="hero.eyebrow"
+              >Software Engineering Student at USIU-Africa</span
+            >
+            <h1>
+              <span data-i18n="hero.titleA"
+                >Building digital products people</span
+              ><span class="gradient-text typing-text" data-typing></span>
+            </h1>
+            <p data-i18n="hero.body">
+              I am Hubert Lubula, a full stack developer focused on clean
+              interfaces, scalable architecture, and user experiences that feel
+              effortless.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="projects.html"
+                ><i class="fa-solid fa-layer-group"></i
+                ><span data-i18n="hero.primaryCta">View Projects</span></a
+              ><a class="btn btn-secondary" href="contact.html"
+                ><i class="fa-solid fa-paper-plane"></i
+                ><span data-i18n="hero.secondaryCta">Let's Talk</span></a
+              >
             </div>
-        </nav>
-    </header>
-
-    <main>
-        <section id="home" class="hero section">
-            <div class="container hero-grid">
-                <div class="hero-copy reveal">
-                    <span class="eyebrow" data-i18n="hero.eyebrow">Software Engineering Student at USIU-Africa</span>
-                    <h1>
-                        <span data-i18n="hero.titleA">Building digital products people</span>
-                        <span class="gradient-text typing-text" data-typing></span>
-                    </h1>
-                    <p data-i18n="hero.body">I am Hubert Lubula, a full stack developer focused on clean interfaces, scalable architecture, and user experiences that feel effortless.</p>
-
-                    <div class="hero-actions">
-                        <a class="btn btn-primary" href="#projects">
-                            <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
-                            <span data-i18n="hero.primaryCta">View Projects</span>
-                        </a>
-                        <a class="btn btn-secondary" href="#contact">
-                            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-                            <span data-i18n="hero.secondaryCta">Let's Talk</span>
-                        </a>
-                    </div>
-
-                    <div class="social-row" aria-label="Social links">
-                        <a href="https://github.com/hubert-art" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/hubert-lubula-7737353b4/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/were_hub/" target="_blank" rel="noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                       <a href="https://www.tiktok.com/@hub.hb?lang=fr" target="_blank" rel="noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                    </div>
-                </div>
-
-                <div class="hero-visual reveal">
-                    <div class="profile-card">
-                        <div class="profile-orbit"></div>
-                        <img src="./src/assets/portfolio .jpg" alt="Portrait of Hubert Lubula" class="profile-image" loading="eager">
-                        <div class="status-pill">
-                            <span></span>
-                            <strong data-i18n="hero.available">Available for internships and freelance</strong>
-                        </div>
-                    </div>
-                    <div class="floating-card card-code">
-                        <i class="fa-solid fa-code"></i>
-                        <span data-i18n="hero.floatOne">Full Stack Builder</span>
-                    </div>
-                    <div class="floating-card card-design">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        <span data-i18n="hero.floatTwo">UI/UX Mindset</span>
-                    </div>
-                </div>
+            <div class="social-row">
+              <a
+                href="https://github.com/hubert-art"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+                ><i class="fa-brands fa-github"></i></a
+              ><a
+                href="https://www.linkedin.com/in/hubert-lubula-7737353b4/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+                ><i class="fa-brands fa-linkedin-in"></i></a
+              ><a
+                href="https://www.instagram.com/were_hub/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
             </div>
-
-            <a class="scroll-indicator" href="#about" aria-label="Scroll to about">
-                <span></span>
-            </a>
-        </section>
-
-        <section id="about" class="section about">
-            <div class="container split-layout">
-                <div class="section-heading reveal">
-                    <span class="eyebrow" data-i18n="about.eyebrow">About Me</span>
-                    <h2 data-i18n="about.title">A developer shaped by curiosity, design, and product thinking.</h2>
-                </div>
-                <div class="story-panel reveal">
-                    <p data-i18n="about.p1">I am a Software Engineering student at United States International University - Africa, learning how to turn ambitious ideas into reliable digital products.</p>
-                    <p data-i18n="about.p2">Software engineering attracted me because it combines logic, creativity, and impact. I love the moment where a rough idea becomes something people can touch, use, and enjoy.</p>
-                    <p data-i18n="about.p3">My goal is to become the kind of engineer who can move from strategy to interface to backend architecture with care. I am motivated by elegant systems, useful design, and the belief that great software should feel human.</p>
-                    <blockquote data-i18n="about.quote">Build software that people genuinely enjoy using.</blockquote>
-                </div>
+          </div>
+          <div class="hero-visual">
+            <div class="profile-card">
+              <div class="profile-orbit"></div>
+              <img
+                src="./src/assets/portfolio .jpg"
+                alt="Portrait of Hubert Lubula"
+                class="profile-image"
+              />
+              <div class="status-pill">
+                <span></span
+                ><strong data-i18n="hero.available"
+                  >Available for internships and freelance</strong
+                >
+              </div>
             </div>
-        </section>
-
-        <section id="education" class="section education">
-            <div class="container">
-                <div class="section-heading centered reveal">
-                    <span class="eyebrow" data-i18n="education.eyebrow">Education</span>
-                    <h2 data-i18n="education.title">Currently growing at USIU-Africa.</h2>
-                </div>
-                <div class="education-card reveal">
-                    <div>
-                        <span class="card-kicker" data-i18n="education.degreeLabel">Degree</span>
-                        <h3 data-i18n="education.degree">Bachelor of Science in Software Engineering</h3>
-                        <p data-i18n="education.school">United States International University - Africa</p>
-                    </div>
-                    <div class="education-meta">
-                        <span data-i18n="education.graduation">Expected graduation: In progress</span>
-                        <span data-i18n="education.interests">Academic focus: software architecture, databases, AI, and product design</span>
-                    </div>
-                    <div class="coursework">
-                        <span>Data Structures</span>
-                        <span>Database Systems</span>
-                        <span>Web Engineering</span>
-                        <span>Software Design</span>
-                        <span>AI Fundamentals</span>
-                    </div>
-                </div>
+            <div class="floating-card card-code">
+              <i class="fa-solid fa-code"></i
+              ><span data-i18n="hero.floatOne">Full Stack Builder</span>
             </div>
-        </section>
-
-        <section id="skills" class="section skills">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <span class="eyebrow" data-i18n="skills.eyebrow">Skills</span>
-                    <h2 data-i18n="skills.title">A balanced toolkit for modern product development.</h2>
-                </div>
-
-                <div class="skills-grid">
-                    <article class="skill-card reveal">
-                        <i class="fa-solid fa-display"></i>
-                        <h3 data-i18n="skills.frontend">Frontend</h3>
-                        <p>React, TypeScript, JavaScript, HTML, CSS, Tailwind CSS, Responsive Design, Vite, React Router, UI/UX, Figma</p>
-                        <div class="progress"><span style="--value: 92%"></span></div>
-                    </article>
-                    <article class="skill-card reveal">
-                        <i class="fa-solid fa-server"></i>
-                        <h3 data-i18n="skills.backend">Backend</h3>
-                        <p>Node.js, Express, NestJS, REST APIs, Authentication, JWT, API Integration</p>
-                        <div class="progress"><span style="--value: 84%"></span></div>
-                    </article>
-                    <article class="skill-card reveal">
-                        <i class="fa-solid fa-database"></i>
-                        <h3 data-i18n="skills.databases">Databases</h3>
-                        <p>PostgreSQL, MySQL, Prisma ORM, SQL, data modeling, relational design</p>
-                        <div class="progress"><span style="--value: 80%"></span></div>
-                    </article>
-                    <article class="skill-card reveal">
-                        <i class="fa-solid fa-terminal"></i>
-                        <h3 data-i18n="skills.tools">Tools</h3>
-                        <p>Git, GitHub, VS Code, Postman, Docker basics, Linux, Render, Vercel</p>
-                        <div class="progress"><span style="--value: 86%"></span></div>
-                    </article>
-                    <article class="skill-card reveal">
-                        <i class="fa-solid fa-brain"></i>
-                        <h3 data-i18n="skills.languages">Languages</h3>
-                        <p>JavaScript, TypeScript, C#, C++, Java, SQL</p>
-                        <div class="progress"><span style="--value: 88%"></span></div>
-                    </article>
-                    <article class="skill-card reveal">
-                        <i class="fa-solid fa-people-group"></i>
-                        <h3 data-i18n="skills.soft">Soft Skills</h3>
-                        <p>Leadership, collaboration, communication, critical thinking, creativity, adaptability, continuous learning</p>
-                        <div class="progress"><span style="--value: 90%"></span></div>
-                    </article>
-                </div>
+            <div class="floating-card card-design">
+              <i class="fa-solid fa-wand-magic-sparkles"></i
+              ><span data-i18n="hero.floatTwo">UI/UX Mindset</span>
             </div>
-        </section>
-
-        <section id="experience" class="section experience">
-            <div class="container split-layout">
-                <div class="section-heading reveal">
-                    <span class="eyebrow" data-i18n="experience.eyebrow">Experience</span>
-                    <h2 data-i18n="experience.title">Building through academic work, freelance projects, and leadership.</h2>
-                </div>
-                <div class="experience-list">
-                    <article class="experience-item reveal">
-                        <span>2025</span>
-                        <h3 data-i18n="experience.item1Title">Frontend Developer - BuyIn</h3>
-                        <p data-i18n="experience.item1Body">Designed and implemented a responsive marketplace interface with a strong focus on usability, product flow, and collaboration.</p>
-                    </article>
-                    <article class="experience-item reveal">
-                        <span>2024</span>
-                        <h3 data-i18n="experience.item2Title">Web Designer - Flocon Energie</h3>
-                        <p data-i18n="experience.item2Body">Created a professional company website with clear content structure, accessible contact paths, and clean visual direction.</p>
-                    </article>
-                    <article class="experience-item reveal">
-                        <span>Ongoing</span>
-                        <h3 data-i18n="experience.item3Title">University Projects and Product Experiments</h3>
-                        <p data-i18n="experience.item3Body">Exploring full stack applications, database design, API integration, and AI-assisted product concepts through practical builds.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="section projects">
-            <div class="container">
-                <div class="section-heading centered reveal">
-                    <span class="eyebrow" data-i18n="projects.eyebrow">Featured Projects</span>
-                    <h2 data-i18n="projects.title">Selected work with product thinking baked in.</h2>
-                </div>
-
-                <div class="project-grid">
-                    <article class="project-card reveal">
-                        <img src="./src/assets/shutter-speed-BQ9usyzHx_w-unsplash.jpg" alt="BuyIn project preview" loading="lazy">
-                        <div class="project-content">
-                            <span>Marketplace • 2025</span>
-                            <h3>BuyIn</h3>
-                            <p data-i18n="projects.buyin">A modern online buying and selling platform designed for smooth product discovery, seller workflows, and responsive shopping experiences.</p>
-                            <div class="tag-row"><span>React</span><span>TypeScript</span><span>Vite</span><span>CSS</span></div>
-                            <div class="project-actions">
-                                <a href="https://github.com/switch-team-org/front-buyin" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
-                                <!-- <a href="#" aria-label="BuyIn live demo"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a> -->
-                            </div>
-                        </div>
-                    </article>
-                    <article class="project-card reveal">
-                        <img src="./src/assets/logo flocon energie.png" alt="Flocon Energie logo and project preview" loading="lazy">
-                        <div class="project-content">
-                            <span>Company Website • 2024</span>
-                            <h3>Flocon Energie</h3>
-                            <p data-i18n="projects.flocon">A clean business website for an electrical services company, built to improve credibility, explain services, and make contact easier.</p>
-                            <div class="tag-row"><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Firebase</span></div>
-                            <div class="project-actions">
-                                <a href="https://github.com/hubert-art?tab=repositories" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
-                                <!-- <a href="#" aria-label="Flocon Energie live demo"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a> -->
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="section services">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <span class="eyebrow" data-i18n="services.eyebrow">Services</span>
-                    <h2 data-i18n="services.title">How I can help turn ideas into polished software.</h2>
-                </div>
-                <div class="service-grid">
-                    <article class="service-card reveal"><i class="fa-solid fa-globe"></i><h3 data-i18n="services.website">Website Development</h3></article>
-                    <article class="service-card reveal"><i class="fa-solid fa-palette"></i><h3 data-i18n="services.frontend">Frontend Engineering</h3></article>
-                    <article class="service-card reveal"><i class="fa-solid fa-gears"></i><h3 data-i18n="services.backend">Backend Development</h3></article>
-                    <article class="service-card reveal"><i class="fa-solid fa-cubes"></i><h3 data-i18n="services.fullstack">Full Stack Applications</h3></article>
-                    <article class="service-card reveal"><i class="fa-solid fa-pen-ruler"></i><h3 data-i18n="services.design">UI/UX Design</h3></article>
-                    <article class="service-card reveal"><i class="fa-solid fa-plug"></i><h3 data-i18n="services.api">API Integration</h3></article>
-                    <article class="service-card reveal"><i class="fa-solid fa-database"></i><h3 data-i18n="services.database">Database Design</h3></article>
-                    <article class="service-card reveal"><i class="fa-solid fa-rocket"></i><h3 data-i18n="services.deploy">Deployment</h3></article>
-                </div>
-            </div>
-        </section>
-
-        <section id="stack" class="section stack">
-            <div class="container">
-                <div class="section-heading centered reveal">
-                    <span class="eyebrow" data-i18n="stack.eyebrow">Tech Stack</span>
-                    <h2 data-i18n="stack.title">Tools I use to design, build, and ship.</h2>
-                </div>
-                <div class="stack-cloud reveal">
-                    <span>React</span><span>TypeScript</span><span>JavaScript</span><span>Node.js</span><span>Java</span><span>NestJS</span><span>PostgreSQL</span><span>MySQL</span><span>Prisma</span><span>Figma</span><span>GitHub</span><span>Thunderc Client</span><span>Vercel</span><span>Render</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="timeline" class="section timeline-section">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <span class="eyebrow" data-i18n="timeline.eyebrow">Timeline</span>
-                    <h2 data-i18n="timeline.title">The path I am building on.</h2>
-                </div>
-                <div class="timeline">
-                    <article class="timeline-item reveal"><span>2019</span><h3 data-i18n="timeline.t1">Started building with code and design</h3></article>
-                    <article class="timeline-item reveal"><span>2023</span><h3 data-i18n="timeline.t2">Delivered business and academic web projects</h3></article>
-                    <article class="timeline-item reveal"><span>2025</span><h3 data-i18n="timeline.t3">Focused on full stack product experiences</h3></article>
-                    <article class="timeline-item reveal"><span>Future</span><h3 data-i18n="timeline.t4">Grow into a product-minded software architect</h3></article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section proof">
-            <div class="container stats-grid reveal">
-                <div><strong data-counter="6">0</strong><span data-i18n="stats.projects">Projects Completed</span></div>
-                <div><strong data-counter="16">0</strong><span data-i18n="stats.tech">Technologies Learned</span></div>
-                <div><strong data-counter="7">0</strong><span data-i18n="stats.years">Years of Learning</span></div>
-                <div><strong data-counter="8">0</strong><span data-i18n="stats.clients">Happy Collaborators</span></div>
-            </div>
-        </section>
-
-        <!-- <section id="testimonials" class="section testimonials">
-            <div class="container">
-                <div class="section-heading centered reveal">
-                    <span class="eyebrow" data-i18n="testimonials.eyebrow">Testimonials</span>
-                    <h2 data-i18n="testimonials.title">What collaborators value.</h2>
-                </div>
-                <div class="testimonial-slider reveal" data-slider>
-                    <article class="testimonial active">
-                        <div class="avatar">AM</div>
-                        <p data-i18n="testimonials.one">Hubert brings clarity, taste, and real ownership to the work. He thinks about the person using the product, not only the code.</p>
-                        <h3>Amina M.</h3>
-                        <span>Product Collaborator</span>
-                    </article>
-                    <article class="testimonial">
-                        <div class="avatar">DK</div>
-                        <p data-i18n="testimonials.two">He is curious, fast to learn, and careful with details. The final interface felt clean and professional.</p>
-                        <h3>David K.</h3>
-                        <span>Project Lead</span>
-                    </article>
-                    <article class="testimonial">
-                        <div class="avatar">SN</div>
-                        <p data-i18n="testimonials.three">A reliable teammate who communicates well and turns vague ideas into something concrete.</p>
-                        <h3>Sarah N.</h3>
-                        <span>University Teammate</span>
-                    </article>
-                </div>
-            </div>
-        </section> -->
-
-        <section id="certificates" class="section certificates">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <span class="eyebrow" data-i18n="certificates.eyebrow">Certificates</span>
-                    <h2 data-i18n="certificates.title">Learning with intention.</h2>
-                </div>
-                <div class="certificate-grid">
-                    <article class="certificate-card reveal"><span>2026</span><h3>Full Stack Web Development</h3><p data-i18n="certificates.one">In progress</p></article>
-                    <article class="certificate-card reveal"><span>2025</span><h3>UI/UX Design Foundations</h3><p data-i18n="certificates.two">Completed</p></article>
-                    <article class="certificate-card reveal"><span>2025</span><h3>Database Design</h3><p data-i18n="certificates.three">Completed</p></article>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section contact">
-            <div class="container contact-grid">
-                <div class="contact-copy reveal">
-                    <span class="eyebrow" data-i18n="contact.eyebrow">Contact</span>
-                    <h2 data-i18n="contact.title">Have an idea worth building?</h2>
-                    <p data-i18n="contact.body">I am open to internships, freelance projects, collaborations, and conversations about modern digital products.</p>
-                    <div class="contact-methods">
-                        <a href="mailto:lubulahubert@mail.com"><i class="fa-solid fa-envelope"></i> lubulahubert@mail.com</a>
-                        <a href="tel:+254141504419 "><i class="fa-solid fa-phone"></i> +254 141504419</a>
-                        <span><i class="fa-solid fa-location-dot"></i> Nairobi, Kenya</span>
-                        <span><i class="fa-solid fa-clock"></i> <span data-i18n="contact.availability">Available for select opportunities</span></span>
-                    </div>
-                    <div class="map-placeholder" aria-label="Google Maps placeholder">
-                        <i class="fa-solid fa-map-location-dot"></i>
-                        <span>Nairobi, Kenya</span>
-                    </div>
-                </div>
-
-                <form class="contact-form reveal" novalidate>
-                    <label>
-                        <span data-i18n="form.name">Name</span>
-                        <input type="text" name="name" autocomplete="name" required>
-                    </label>
-                    <label>
-                        <span data-i18n="form.email">Email</span>
-                        <input type="email" name="email" autocomplete="email" required>
-                    </label>
-                    <label>
-                        <span data-i18n="form.project">Project Type</span>
-                        <select name="project" required>
-                            <option value="" data-i18n="form.choose">Choose one</option>
-                            <option>Website Development</option>
-                            <option>Full Stack Application</option>
-                            <option>UI/UX Design</option>
-                            <option>Consulting</option>
-                        </select>
-                    </label>
-                    <label>
-                        <span data-i18n="form.message">Message</span>
-                        <textarea name="message" rows="5" required></textarea>
-                    </label>
-                    <button class="btn btn-primary" type="submit">
-                        <i class="fa-solid fa-paper-plane"></i>
-                        <span data-i18n="form.send">Send Message</span>
-                    </button>
-                    <p class="form-status" role="status" aria-live="polite"></p>
-                </form>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
+      <section class="section home-explore">
+        <div class="container">
+          <div class="section-heading centered">
+            <span class="eyebrow">Portfolio</span>
+            <h2>Explore my work and direction.</h2>
+          </div>
+          <div class="path-grid">
+            <a href="about.html"
+              ><i class="fa-solid fa-user"></i><strong>About & education</strong
+              ><span>My background, learning path, and certificates.</span
+              ><b>Explore <i class="fa-solid fa-arrow-right"></i></b></a
+            ><a href="expertise.html"
+              ><i class="fa-solid fa-code"></i><strong>Expertise</strong
+              ><span>Skills, services, and the tools I use.</span
+              ><b>Explore <i class="fa-solid fa-arrow-right"></i></b></a
+            ><a href="experience.html"
+              ><i class="fa-solid fa-briefcase"></i><strong>Experience</strong
+              ><span>Academic work, freelance projects, and growth.</span
+              ><b>Explore <i class="fa-solid fa-arrow-right"></i></b
+            ></a>
+          </div>
+        </div>
+      </section>
+      <section class="section proof">
+        <div class="container stats-grid">
+          <div>
+            <strong data-counter="6">16</strong
+            ><span data-i18n="stats.projects">Projects Completed</span>
+          </div>
+          <div>
+            <strong data-counter="16">+23</strong
+            ><span data-i18n="stats.tech">Technologies Learned</span>
+          </div>
+          <div>
+            <strong data-counter="7">+6</strong
+            ><span data-i18n="stats.years">Years of Learning</span>
+          </div>
+          <div>
+            <strong data-counter="8">4</strong
+            ><span data-i18n="stats.clients">Happy Collaborators</span>
+          </div>
+        </div>
+      </section>
     </main>
-
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div>
-                <a class="logo" href="#home"><span class="logo-mark">h</span><span>hub.objct</span></a>
-                <p data-i18n="footer.description">A modern portfolio for Hubert Lubula, software engineering student and full stack product builder.</p>
-                <div class="footer-socials">
-                    <a href="https://github.com/hubert-art" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/hubert-lubula-7737353b4/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/were_hub/" target="_blank" rel="noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@hub.hb?lang=fr" target="_blank" rel="noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                </div>
-            </div>
-            <div>
-                <h3 data-i18n="footer.quick">Quick Links</h3>
-                <a href="#about" data-i18n="nav.about">About</a>
-                <a href="#skills" data-i18n="nav.skills">Skills</a>
-                <a href="#projects" data-i18n="nav.projects">Projects</a>
-                <a href="#contact" data-i18n="nav.contact">Contact</a>
-            </div>
-            <div>
-                <h3 data-i18n="footer.services">Services</h3>
-                <a href="#services" data-i18n="services.website">Website Development</a>
-                <a href="#services" data-i18n="services.frontend">Frontend Engineering</a>
-                <a href="#services" data-i18n="services.api">API Integration</a>
-                <a href="#services" data-i18n="services.deploy">Deployment</a>
-            </div>
-            <div>
-                <h3 data-i18n="footer.contact">Contact</h3>
-                <a href="mailto:lubulahubert@mail.com">lubulahubert@mail.com</a>
-                <a href="tel:+254141504419 ">+254 141504419 / +254 746786865</a>
-                <span>Nairobi, Kenya</span>
-            </div>
-        </div>
-        <div class="container footer-bottom">
-            <span>&copy; <span data-year></span> Hubert Lubula. <span data-i18n="footer.rights">All rights reserved.</span></span>
-            <a class="back-to-top" href="#home" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
-        </div>
-    </footer>
-
+    <div data-site-footer></div>
     <script src="./src/script.js"></script>
-</body>
+  </body>
 </html>
