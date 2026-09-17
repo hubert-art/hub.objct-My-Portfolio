@@ -173,7 +173,13 @@ The interface uses **Inter** and **Plus Jakarta Sans** typography, with a minima
 ```text
 portfolio/
 │
+├── about.html
+├── contact.html
+├── creative.html
+├── experience.html
+├── expertise.html
 ├── index.html
+├── projects.html
 │
 ├── src/
 │   ├── assets/
