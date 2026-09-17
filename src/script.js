@@ -295,6 +295,42 @@ const currentPage = document.querySelector("main")?.dataset.page || "home";
 document.body.id = "top";
 const shell = document.querySelector("[data-site-shell]");
 const footerSlot = document.querySelector("[data-site-footer]");
+const pageMain = document.querySelector("main");
+
+const skeletonLine = (width = "100%", className = "") =>
+  `<span class="skeleton skeleton-line ${className}" style="--skeleton-width:${width}"></span>`;
+
+const skeletonCard = (type = "text") => {
+  if (type === "project") {
+    return `<article class="skeleton-project-card"><span class="skeleton skeleton-image"></span><div>${skeletonLine("24%", "skeleton-kicker")}${skeletonLine("62%", "skeleton-title")}${skeletonLine("94%")}${skeletonLine("78%")}${skeletonLine("46%", "skeleton-button")}</div></article>`;
+  }
+  if (type === "experience") {
+    return `<article class="skeleton-experience-card">${skeletonLine("14%", "skeleton-kicker")}${skeletonLine("48%", "skeleton-title")}${skeletonLine("92%")}${skeletonLine("70%")}</article>`;
+  }
+  return `<article class="skeleton-text-card">${skeletonLine("50%", "skeleton-title")}${skeletonLine("94%")}${skeletonLine("76%")}${skeletonLine("62%")}</article>`;
+};
+
+function createPageSkeleton(page) {
+  const header = `<section class="skeleton-page-header"><div class="container">${skeletonLine("11%", "skeleton-breadcrumb")}${skeletonLine("16%", "skeleton-kicker")}${skeletonLine("min(74%, 680px)", "skeleton-display")}${skeletonLine("min(46%, 440px)", "skeleton-display skeleton-display-short")}</div></section>`;
+  const grid = (content, className = "skeleton-grid") => `<section class="skeleton-section"><div class="container ${className}">${content}</div></section>`;
+  const creativeCard = (count) => `<article class="skeleton-creative-card"><div class="skeleton-image-set" data-image-count="${count}">${Array.from({ length: count }, () => '<span class="skeleton skeleton-image"></span>').join("")}</div><div class="skeleton-creative-meta">${skeletonLine("44%", "skeleton-title")}${skeletonLine("22%", "skeleton-kicker")}</div></article>`;
+  const pages = {
+    home: `<section class="skeleton-home-hero"><div class="container skeleton-home-grid"><div>${skeletonLine("28%", "skeleton-kicker")}${skeletonLine("86%", "skeleton-display")}${skeletonLine("66%", "skeleton-display")}${skeletonLine("92%")}${skeletonLine("76%")}<div class="skeleton-actions">${skeletonLine("148px", "skeleton-button")}${skeletonLine("124px", "skeleton-button")}</div></div><span class="skeleton skeleton-hero-image"></span></div></section>${grid(`${skeletonCard()}${skeletonCard()}${skeletonCard()}`, "skeleton-grid skeleton-grid-three")}`,
+    about: `${header}${grid(`${skeletonCard()}${skeletonCard()}`, "skeleton-split-grid")}${grid(`${skeletonCard()}${skeletonCard()}${skeletonCard()}`, "skeleton-grid skeleton-grid-three")}`,
+    expertise: `${header}${grid(`${skeletonCard()}${skeletonCard()}${skeletonCard()}${skeletonCard()}${skeletonCard()}${skeletonCard()}`, "skeleton-grid skeleton-grid-three")}`,
+    experience: `${header}${grid(`${skeletonCard("experience")}${skeletonCard("experience")}${skeletonCard("experience")}`, "skeleton-experience-list")}`,
+    projects: `${header}${grid(`${skeletonCard("project")}${skeletonCard("project")}${skeletonCard("project")}`, "skeleton-grid skeleton-grid-three")}`,
+    creative: `${header}${grid(`${creativeCard(2)}${creativeCard(3)}${creativeCard(2)}`, "skeleton-creative-gallery")}`,
+    contact: `${header}${grid(`<div class="skeleton-contact-copy">${skeletonLine("88%", "skeleton-display")}${skeletonLine("92%")}${skeletonLine("76%")}${skeletonLine("60%")}${skeletonLine("100%", "skeleton-map")}</div><div class="skeleton-contact-form">${skeletonLine("26%", "skeleton-kicker")}${skeletonLine("100%", "skeleton-field")}${skeletonLine("26%", "skeleton-kicker")}${skeletonLine("100%", "skeleton-field")}${skeletonLine("26%", "skeleton-kicker")}${skeletonLine("100%", "skeleton-textarea")}${skeletonLine("148px", "skeleton-button")}</div>`, "skeleton-contact-grid")}`,
+  };
+  return `<div class="page-skeleton" aria-hidden="true">${pages[page] || pages.home}</div>`;
+}
+
+if (pageMain) {
+  pageMain.classList.add("is-loading");
+  pageMain.setAttribute("aria-busy", "true");
+  pageMain.insertAdjacentHTML("beforebegin", createPageSkeleton(currentPage));
+}
 
 if (shell)
   shell.innerHTML = `
@@ -391,6 +427,66 @@ function renderCreativeGallery(items) {
 }
 
 renderCreativeGallery(creativeItems);
+
+function setImageLoaded(image, holder) {
+  holder.classList.add("is-loaded");
+  image.classList.add("is-loaded");
+}
+
+function enhanceMainImages() {
+  if (!pageMain) return [];
+
+  return [...pageMain.querySelectorAll("img")].map((image) => {
+    let holder = image.closest(".creative-image") || image.closest(".profile-card");
+
+    if (image.parentElement.classList.contains("project-card")) {
+      const frame = document.createElement("span");
+      frame.className = "image-frame";
+      image.parentElement.insertBefore(frame, image);
+      frame.append(image);
+      holder = frame;
+    }
+
+    if (!holder) holder = image.parentElement;
+    holder.classList.add("image-loading");
+    image.classList.add("image-reveal");
+
+    const ready = new Promise((resolve) => {
+      const complete = () => {
+        setImageLoaded(image, holder);
+        resolve();
+      };
+      if (image.complete) {
+        complete();
+      } else {
+        image.addEventListener("load", complete, { once: true });
+        image.addEventListener("error", complete, { once: true });
+      }
+    });
+
+    return { image, ready };
+  });
+}
+
+const enhancedImages = enhanceMainImages();
+
+function revealPageWhenReady() {
+  if (!pageMain) return;
+  const criticalImages = enhancedImages
+    .filter(({ image }) => image.loading !== "lazy")
+    .map(({ ready }) => ready);
+  const fontsReady = document.fonts?.ready || Promise.resolve();
+
+  Promise.all([...criticalImages, fontsReady]).then(() => {
+    requestAnimationFrame(() => {
+      pageMain.classList.remove("is-loading");
+      pageMain.removeAttribute("aria-busy");
+      document.querySelector(".page-skeleton")?.classList.add("is-complete");
+    });
+  });
+}
+
+revealPageWhenReady();
 
 if (creativeGallery) {
   const viewer = document.createElement("dialog");
