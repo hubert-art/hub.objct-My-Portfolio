@@ -11,7 +11,7 @@ The portfolio was designed to present who I am as a software engineer, the techn
 
 My approach combines **software engineering, frontend development, backend architecture, UI/UX design, and product thinking** to create digital experiences that are both functional and enjoyable to use.
 
-The portfolio is intentionally designed with a clean and minimal visual language, using a white interface with purple accents, responsive layouts, subtle animations, and a strong focus on readability and user experience.
+The portfolio is intentionally designed with a clean and minimal visual language, using a white interface with green accents, responsive layouts, subtle animations, and a strong focus on readability and user experience.
 
 ## About Me
 
